@@ -1,0 +1,24 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}
+User | Profile
+{% endblock %}
+
+{% block content %}
+<h1>{{ page_content_title }}</h1>
+<hr>
+<div class="row">
+    <div class="col-6">
+        <h1>we will show profile details here.</h1>
+    </div>
+    <div class="col-6">
+        <form action="{% url 'user.profile' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="hidden" name="email" value="{{ email }}">
+            <input type="submit" value="Upload" class="btn btn-primary">
+        </form>
+    </div>
+    
+</div>
+{% endblock %}

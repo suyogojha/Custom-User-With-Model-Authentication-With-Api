@@ -1,0 +1,22 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}
+User | Dashboard
+{% endblock %}
+
+{% block content %}
+<h1>{{ page_content_title }}</h1>
+<hr>
+<div>
+    <h3>{{ page_content_body }}</h3>
+    {% load static %}
+    <img src="{% static 'uploads/test.jpg'  %}" alt="" width="100px" height="100px">
+    <hr>
+    <h3>{{ user_email }}</h3>
+</div>
+{% endblock %}
+
+{% load static %}
+{% block custom_js %}
+    <script src="{% static 'js/script.js' %}"></script>
+{% endblock %}
